@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Import Link from React Router
 import "./InfoSection.css";
-import infoImage from "./phone.png"; // Replace with your image
+import infoImage from "./phone.JPG"; // Replace with your image
 
 const InfoSection = () => {
   return (
