@@ -13,6 +13,9 @@ import ScrollToTop from "./ScrollToTop"; // Import the ScrollToTop component
 // Import both FeaturesPage and FeaturePage from the merged file
 import { FeaturesPage, FeaturePage } from "./FeaturesPage";
 
+// Import FoundersPage
+import FoundersPage from "./FoundersPage";
+
 function App() {
   return (
     <Router>
@@ -40,6 +43,8 @@ function App() {
           <Route path="/features/:featureId" element={<FeaturePage />} />
           {/* Pricing Page */}
           <Route path="/pricing" element={<PricingPage />} />
+          {/* Founders Page */}
+          <Route path="/founders" element={<FoundersPage />} />
         </Routes>
       </div>
     </Router>

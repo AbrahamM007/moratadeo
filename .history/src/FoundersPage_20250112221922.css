@@ -1,0 +1,110 @@
+/* General Page Styling */
+.founders-page {
+    font-family: "Arial", sans-serif;
+    background: #fff; /* Pure white background */
+    padding: 20px 0;
+    overflow: hidden;
+  }
+  
+  /* Hero Section */
+  .founders-hero {
+    position: relative;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Gradient Text for Headers */
+  .founders-hero-title {
+    font-size: 4rem; /* Larger text */
+    font-weight: bold;
+    line-height: 1.2;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .founders-hero-title span {
+    background: linear-gradient(90deg, #ff6a00, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Gradient Text for Subtitles */
+  .founders-hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 0 auto;
+    max-width: 800px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Founders Section */
+  .founders-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+  
+  .founder-card {
+    background: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 350px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .founder-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .founder-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Gradient Text for Names */
+  .founder-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #ff6a00, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Gradient Text for Titles */
+  .founder-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Gradient Text for Bios */
+  .founder-bio {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 0;
+    background: linear-gradient(90deg, #00d4ff, #00b4a7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  

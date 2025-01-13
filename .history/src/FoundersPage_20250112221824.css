@@ -1,0 +1,141 @@
+/* General Page Styling */
+.founders-page {
+    font-family: "Arial", sans-serif;
+    background: #fff; /* Pure white background */
+    padding: 20px 0;
+    overflow: hidden;
+  }
+  
+  /* Hero Section */
+  .founders-hero {
+    position: relative;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .founders-hero-title {
+    font-size: 4rem; /* Larger text */
+    font-weight: bold;
+    line-height: 1.2;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .founders-hero-title span {
+    background: linear-gradient(90deg, #ff6a00, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .founders-hero-subtitle {
+    font-size: 1.5rem; /* Subtle gradient for smaller text */
+    font-weight: 300;
+    margin: 0 auto;
+    max-width: 800px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Decorative Circles */
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    animation: breathing 8s ease-in-out infinite;
+    z-index: 1;
+    opacity: 0.2;
+  }
+  
+  @keyframes breathing {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+  /* Scatter Circles Across the Page */
+  .circle1 { width: 120px; height: 120px; background: #007bff; top: 10%; left: 5%; }
+  .circle2 { width: 80px; height: 80px; background: #00d4ff; top: 15%; right: 10%; }
+  .circle3 { width: 140px; height: 140px; background: #6a11cb; bottom: 20%; left: 20%; }
+  .circle4 { width: 200px; height: 200px; background: #ff6a00; top: 50%; right: 5%; }
+  .circle5 { width: 100px; height: 100px; background: #2575fc; bottom: 10%; left: 50%; transform: translateX(-50%); }
+  .circle6 { width: 110px; height: 110px; background: #00b4a7; top: 5%; left: 40%; }
+  .circle7 { width: 150px; height: 150px; background: #ff8c00; bottom: 30%; right: 30%; }
+  .circle8 { width: 180px; height: 180px; background: #00bcd4; top: 60%; left: 15%; }
+  .circle9 { width: 90px; height: 90px; background: #ff6a00; bottom: 15%; right: 10%; }
+  .circle10 { width: 120px; height: 120px; background: #007bff; top: 25%; left: 10%; }
+  .circle11 { width: 100px; height: 100px; background: #6a11cb; top: 35%; right: 20%; }
+  .circle12 { width: 90px; height: 90px; background: #ff8c00; top: 70%; left: 5%; }
+  .circle13 { width: 110px; height: 110px; background: #00d4ff; bottom: 20%; left: 15%; }
+  .circle14 { width: 130px; height: 130px; background: #ff6a00; bottom: 40%; right: 20%; }
+  .circle15 { width: 160px; height: 160px; background: #007bff; top: 40%; left: 60%; }
+  .circle16 { width: 140px; height: 140px; background: #00b4a7; bottom: 25%; left: 40%; }
+  .circle17 { width: 120px; height: 120px; background: #6a11cb; top: 15%; right: 35%; }
+  .circle18 { width: 110px; height: 110px; background: #ff8c00; bottom: 60%; left: 50%; transform: translateX(-50%); }
+  .circle19 { width: 90px; height: 90px; background: #00bcd4; top: 55%; right: 5%; }
+  .circle20 { width: 100px; height: 100px; background: #2575fc; bottom: 15%; left: 70%; }
+  
+  /* Founders Section */
+  .founders-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+  
+  .founder-card {
+    background: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 350px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .founder-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .founder-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .founder-name {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff6a00, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .founder-title {
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .founder-bio {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    background: linear-gradient(90deg, #00d4ff, #00b4a7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  

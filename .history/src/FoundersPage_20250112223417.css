@@ -1,0 +1,166 @@
+/* General Page Styling */
+.founders-page {
+    font-family: "Arial", sans-serif;
+    background: #ffffff;
+    color: #333;
+    padding: 20px;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  /* Hero Section */
+  .founders-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    padding: 60px 20px;
+    gap: 10px;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .founders-hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 1.1;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .founders-hero-subtitle {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.3;
+    background: linear-gradient(90deg, #ff6a00, #ff70a6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .hero-paragraph {
+    font-size: 1.1rem;
+    color: #c0c0c0;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+  
+  .hero-button {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    border: none;
+    border-radius: 50px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .hero-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Decorative Overlapping Shapes */
+  .decorative-block {
+    position: absolute;
+    background: #f2f2f2;
+    border-radius: 10px;
+    z-index: -1;
+  }
+  
+  .block1 {
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 50%;
+    transform: rotate(-10deg);
+  }
+  
+  .block2 {
+    bottom: 10%;
+    right: 5%;
+    width: 40%;
+    height: 40%;
+    transform: rotate(15deg);
+  }
+  
+  /* Founders Section */
+  .founders-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .founder-card {
+    flex: 0 0 300px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    scroll-snap-align: start;
+    position: relative;
+    transform: scale(0.98);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .founder-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .founder-image-container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+  }
+  
+  .founder-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom: 3px solid #00d4ff;
+  }
+  
+  .founder-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .founder-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #ff6a00, #ff70a6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .founder-bio {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #c0c0c0;
+    padding: 0 10px 10px;
+  }
+  
+  .founders-scroll-indicator {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #aaa;
+    margin: 10px 0;
+  }
+  

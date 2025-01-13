@@ -1,0 +1,123 @@
+/* General Page Styling */
+.founders-page {
+    font-family: "Arial", sans-serif;
+    color: #333;
+    background: linear-gradient(135deg, #f0f4ff, #ffffff);
+    padding: 20px 0;
+    overflow: hidden;
+  }
+  
+  /* Hero Section */
+  .founders-hero {
+    position: relative;
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: 25px;
+    margin: 0 20px 40px;
+    color: white;
+    overflow: hidden;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .founders-hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .founders-hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  
+  /* Decorative Circles */
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+  
+  .circle1 {
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    top: -50px;
+    left: -50px;
+  }
+  
+  .circle2 {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.15);
+    bottom: -100px;
+    right: -100px;
+  }
+  
+  .circle3 {
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.1);
+    top: 100px;
+    right: 50px;
+  }
+  
+  /* Founders Section */
+  .founders-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+  }
+  
+  /* Founder Card */
+  .founder-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 350px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .founder-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Founder Image */
+  .founder-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Founder Info */
+  .founder-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .founder-title {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .founder-bio {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  

@@ -44,6 +44,9 @@ const Navbar = () => {
         <Link to="/pricing" onClick={toggleMenu}>
           Pricing
         </Link>
+        <Link to="/founders" onClick={toggleMenu}>
+          Founders
+        </Link>
         <a href="https://calendly.com/mora78606/30min?month=2025-01" onClick={toggleMenu}>
           Contact
         </a>
