@@ -1,0 +1,188 @@
+:root {
+  --blue-color: #007bff;
+  --orange-color: #ffb400;
+  --gradient: linear-gradient(90deg, var(--blue-color), var(--orange-color));
+  --bg-white: #ffffff;
+  --line-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.design-phase-section {
+  position: relative;
+  padding: 4rem 1rem;
+  background: var(--bg-white);
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 5s ease infinite;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.section-title span {
+  color: var(--blue-color);
+  text-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Timeline Vertical Line */
+.phase-container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 2rem 0;
+}
+
+.phase-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: var(--gradient);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Phase Cards */
+.phase-card {
+  position: relative;
+  width: 45%;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+  background: var(--bg-white);
+  border: 2px solid var(--line-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.6s forwards;
+  z-index: 2;
+}
+
+/* Alternate card alignment */
+.phase-card:nth-child(odd) {
+  left: 0;
+  transform-origin: right center;
+  clip-path: polygon(5% 0%, 100% 0%, 100% 100%, 0% 100%); /* angled right edge */
+  animation-delay: 0.3s;
+}
+.phase-card:nth-child(even) {
+  left: 55%;
+  transform-origin: left center;
+  clip-path: polygon(0% 0%, 95% 0%, 100% 100%, 0% 100%); /* angled left edge */
+  animation-delay: 0.5s;
+}
+
+/* Connector Dots on Timeline */
+.phase-card::before {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  width: 15px;
+  height: 15px;
+  background: var(--bg-white);
+  border: 3px solid var(--gradient);
+  border-radius: 50%;
+  z-index: 3;
+}
+.phase-card:nth-child(odd)::before {
+  right: -7.5px;
+}
+.phase-card:nth-child(even)::before {
+  left: -7.5px;
+}
+
+/* Hover Effect */
+.phase-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Icon styling */
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--blue-color);
+}
+
+/* Content styling */
+.content h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--blue-color);
+}
+.content p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Background Decorative Shapes */
+.design-phase-section::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--blue-color), transparent);
+  opacity: 0.2;
+  z-index: 0;
+  transform: rotate(45deg);
+}
+
+.design-phase-section::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--orange-color), transparent);
+  opacity: 0.2;
+  z-index: 0;
+  transform: rotate(-45deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .phase-card, .phase-card:nth-child(even), .phase-card:nth-child(odd) {
+    width: 90%;
+    left: 5%;
+    clip-path: none;
+    margin-bottom: 2rem;
+  }
+  .phase-container::before {
+    left: 10%;
+  }
+  .phase-card::before {
+    display: none;
+  }
+}

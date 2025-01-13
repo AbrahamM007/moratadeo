@@ -1,0 +1,172 @@
+:root {
+  --primary-color: #00bfff;        /* Vivid sky blue */
+  --secondary-color: #007acc;      /* Deep blue */
+  --accent-color: #00e5ff;         /* Neon blue accent */
+  --bg-dark: #010f2e;              /* Very dark blue background */
+  --card-bg: rgba(1, 22, 47, 0.7); /* Semi-transparent dark blue */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Section Styling */
+.design-phase-section {
+  position: relative;
+  padding: 4rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  perspective: 800px;
+  background: radial-gradient(circle at center, var(--bg-dark), #000);
+  animation: backgroundPulse 20s ease-in-out infinite;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 5s ease infinite;
+  position: relative;
+  z-index: 2;
+}
+.section-title span {
+  color: var(--primary-color);
+  text-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Background Pulsing Animation */
+@keyframes backgroundPulse {
+  0%, 100% { background: radial-gradient(circle at center, #010f2e, #000); }
+  50% { background: radial-gradient(circle at center, #012a4a, #000); }
+}
+
+/* Phase Container */
+.phase-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Phase Card */
+.phase-card {
+  position: relative;
+  width: 250px;
+  padding: 2rem;
+  background: var(--card-bg);
+  border: 2px solid rgba(0,191,255,0.3);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 191, 255, 0.3);
+  transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+.phase-card:nth-child(1) { animation-delay: 0s; }
+.phase-card:nth-child(2) { animation-delay: 0.2s; }
+.phase-card:nth-child(3) { animation-delay: 0.4s; }
+.phase-card:nth-child(4) { animation-delay: 0.6s; }
+
+.phase-card:hover {
+  transform: perspective(800px) rotateX(5deg) rotateY(5deg) translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 191, 255, 0.6);
+  border-color: var(--accent-color);
+  background: linear-gradient(135deg, rgba(1, 22, 47, 0.8), rgba(1, 22, 47, 0.7));
+}
+
+/* Icon with Shimmering Effect */
+.icon {
+  position: relative;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: -0.5rem;
+}
+
+.icon::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(0,229,255,0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { opacity: 0.6; transform: scale(0.5) rotate(0deg); }
+  50% { opacity: 0.3; transform: scale(1) rotate(180deg); }
+  100% { opacity: 0.6; transform: scale(0.5) rotate(360deg); }
+}
+
+/* Phase Title */
+.phase-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Phase Description */
+.phase-card p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* Connector Line */
+.connector-line {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  opacity: 0;
+  animation: drawLine 1s forwards;
+  z-index: -1;
+}
+
+/* Custom positions for each line */
+.line-1 { bottom: 50%; left: 50%; transform: translate(-50%, 50%); animation-delay: 0.7s; }
+.line-2 { top: 0; right: -10px; animation-delay: 0.9s; }
+.line-3 { bottom: 50%; left: 50%; transform: translate(-50%, 50%); animation-delay: 1.1s; }
+.line-4 { top: 0; right: -10px; animation-delay: 1.3s; }
+
+/* Animations */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes drawLine {
+  from { width: 0; opacity: 0; }
+  to { width: 100px; opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .phase-card {
+    width: 100%;
+    margin-bottom: 2rem;
+    transform: none;
+  }
+}

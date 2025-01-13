@@ -1,0 +1,103 @@
+:root {
+  --blue-color: #007bff;
+  --orange-color: #ffb400;
+  --gradient: linear-gradient(90deg, var(--blue-color), var(--orange-color));
+  --bg-white: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.enhanced-phase-container {
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phase-header {
+  text-align: center;
+  padding: 1rem;
+}
+
+.phase-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.phase-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.phase-card {
+  width: 250px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px var(--card-shadow);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.phase-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px var(--card-shadow);
+}
+
+.phase-card.active {
+  transform: scale(1.1);
+  border: 2px solid var(--gradient);
+}
+
+.phase-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.phase-details h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--blue-color);
+}
+
+.phase-details p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.phase-footer {
+  padding: 1rem;
+}
+
+.phase-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.phase-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.phase-dot.active {
+  background: var(--gradient);
+  transform: scale(1.3);
+}

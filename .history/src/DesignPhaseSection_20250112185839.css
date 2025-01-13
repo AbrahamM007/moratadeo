@@ -1,0 +1,179 @@
+:root {
+  --blue-color: #007bff;
+  --orange-color: #ffb400;
+  --gradient: linear-gradient(90deg, var(--blue-color), var(--orange-color));
+  --bg-white: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* General reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.design-phase-section {
+  position: relative;
+  padding: 4rem 2rem;
+  background: var(--bg-white);
+  overflow: hidden;
+}
+
+/* Title with gradient text */
+.section-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  animation: gradientFlow 5s ease infinite;
+  position: relative;
+  z-index: 2;
+}
+.section-title span {
+  color: var(--blue-color);
+  text-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Dynamic Background Shapes */
+.design-phase-section::before,
+.design-phase-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  z-index: 0;
+  animation: float 20s ease-in-out infinite;
+}
+.design-phase-section::before {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--blue-color), transparent);
+  top: -100px;
+  left: -100px;
+}
+.design-phase-section::after {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--orange-color), transparent);
+  bottom: -150px;
+  right: -150px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(20px) translateX(20px); }
+}
+
+/* Grid layout for cards */
+.phase-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Card styling */
+.phase-card {
+  background: var(--bg-white);
+  border: 2px solid transparent;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 20px var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: riseUp 0.8s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Stagger animation delays for cards */
+.phase-card:nth-child(1) { animation-delay: 0.2s; }
+.phase-card:nth-child(2) { animation-delay: 0.4s; }
+.phase-card:nth-child(3) { animation-delay: 0.6s; }
+.phase-card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes riseUp {
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Gradient border effect on hover */
+.phase-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px var(--card-shadow);
+}
+.phase-card:hover::before {
+  content: "";
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: var(--gradient);
+  z-index: -1;
+  border-radius: 17px;
+  animation: borderGlow 2s infinite;
+}
+
+@keyframes borderGlow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
+
+/* Icon styling */
+.icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: spinIcon 6s linear infinite;
+}
+
+@keyframes spinIcon {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Typography */
+.phase-card h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--blue-color);
+  margin-bottom: 0.5rem;
+}
+
+.phase-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Decorative geometric overlay for cards */
+.phase-card::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle at center, var(--orange-color), transparent);
+  opacity: 0.2;
+  transform: rotate(45deg);
+  z-index: 0;
+  animation: float 10s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-title { font-size: 2.5rem; }
+  .icon { font-size: 2.5rem; }
+}

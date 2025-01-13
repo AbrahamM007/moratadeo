@@ -1,0 +1,149 @@
+:root {
+  --blue-color: #007bff;
+  --orange-color: #ffb400;
+  --gradient: linear-gradient(90deg, var(--blue-color), var(--orange-color));
+  --bg-white: #ffffff;
+  --dark-shadow: rgba(0, 0, 0, 0.2);
+  --light-shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: var(--bg-white);
+}
+
+.stunning-phase-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  height: 100vh;
+  background: var(--bg-white);
+}
+
+.stunning-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.stunning-header h1 {
+  font-size: 3rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stunning-header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.stunning-phase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.phase-card {
+  position: relative;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 15px 25px var(--light-shadow), 0 5px 10px var(--dark-shadow);
+  overflow: hidden;
+  transform: scale(0.95);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.phase-card.active {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px var(--dark-shadow);
+  border: 3px solid var(--gradient);
+}
+
+.phase-card:hover {
+  transform: scale(1.05);
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.phase-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: spin 8s linear infinite;
+}
+
+.phase-title {
+  font-size: 1.5rem;
+  color: var(--blue-color);
+  margin-bottom: 0.5rem;
+}
+
+.phase-description {
+  font-size: 1rem;
+  color: #333;
+}
+
+.phase-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient);
+  opacity: 0.1;
+  z-index: 1;
+  transform: scale(1.2);
+  border-radius: 20px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1.2);
+    opacity: 0.1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.2;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.stunning-phase-dots {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.phase-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ddd;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.phase-dot.active {
+  background: var(--gradient);
+  transform: scale(1.3);
+}

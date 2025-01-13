@@ -1,0 +1,138 @@
+:root {
+  --blue-color: #007bff;
+  --orange-color: #ffb400;
+  --accent-color: #00bfff;
+  --bg-white: #ffffff;
+  --card-bg: #f9f9f9;
+  --text-color: #333;
+}
+
+/* General Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Section Styling */
+.design-phase-section {
+  position: relative;
+  padding: 4rem 1rem;
+  text-align: center;
+  background: var(--bg-white);
+  overflow: hidden;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, var(--blue-color), var(--orange-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 5s ease infinite;
+  position: relative;
+  z-index: 1;
+}
+.section-title span {
+  color: var(--blue-color);
+}
+
+/* Phase Container */
+.phase-container {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Phase Card */
+.phase-card {
+  position: relative;
+  width: 50%;
+  padding: 2rem;
+  margin: 2rem auto;
+  background: var(--card-bg);
+  border: 2px solid rgba(0, 123, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+  backdrop-filter: blur(3px);
+  text-align: left;
+}
+.phase-card:nth-child(odd) {
+  margin-right: auto;
+}
+.phase-card:nth-child(even) {
+  margin-left: auto;
+}
+.phase-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon */
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--blue-color);
+}
+
+/* Phase Title */
+.phase-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--blue-color);
+}
+
+/* Phase Description */
+.phase-card p {
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* Connector Line */
+.connector-line {
+  position: absolute;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue-color), var(--orange-color));
+  opacity: 0;
+  animation: drawLine 1s forwards;
+  z-index: -1;
+}
+
+/* Custom positions for each line */
+.line-1 { bottom: -1rem; left: 50%; transform: translateX(-50%); animation-delay: 0.7s; }
+.line-2 { top: -1rem; right: -10px; animation-delay: 0.9s; }
+.line-3 { bottom: -1rem; left: 50%; transform: translateX(-50%); animation-delay: 1.1s; }
+.line-4 { top: -1rem; right: -10px; animation-delay: 1.3s; }
+
+/* Animations */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes drawLine {
+  from { width: 0; opacity: 0; }
+  to { width: 80px; opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .phase-card {
+    width: 90%;
+    margin: 2rem auto;
+  }
+}
