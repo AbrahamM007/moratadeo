@@ -1,3 +1,4 @@
+
 /* Main Features Page */
 .features-container {
   font-family: "Poppins", sans-serif;
@@ -6,10 +7,9 @@
   padding: 5rem 2rem;
   position: relative;
   overflow: hidden;
- }
- 
- 
- .interactive-background {
+}
+
+.interactive-background {
   position: absolute;
   top: 0;
   left: 0;
@@ -18,43 +18,38 @@
   background: radial-gradient(circle, #ff7eb3, #00c3ff, transparent);
   animation: flow 15s infinite linear;
   z-index: -1;
- }
- 
- 
- @keyframes flow {
+}
+
+@keyframes flow {
   from {
     transform: translate(-50%, -50%);
   }
   to {
     transform: translate(0, 0);
   }
- }
- 
- 
- .features-header {
+}
+
+.features-header {
   text-align: center;
   margin-bottom: 4rem;
- }
- 
- 
- .features-header h1 {
+}
+
+.features-header h1 {
   font-size: 3.5rem;
   font-weight: bold;
   background: linear-gradient(90deg, #007bff, #ff7eb3, #ffb400);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: fadeIn 1.5s ease-in-out;
- }
- 
- 
- .features-header p {
+}
+
+.features-header p {
   font-size: 1.2rem;
   color: #666;
   animation: fadeIn 2s ease-in-out;
- }
- 
- 
- @keyframes fadeIn {
+}
+
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(-20px);
@@ -63,18 +58,16 @@
     opacity: 1;
     transform: translateY(0);
   }
- }
- 
- 
- .features-grid {
+}
+
+.features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   z-index: 1;
- }
- 
- 
- .feature-card {
+}
+
+.feature-card {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(245, 245, 245, 0.9));
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
@@ -84,40 +77,35 @@
   transition: transform 0.5s, box-shadow 0.3s;
   cursor: pointer;
   overflow: hidden;
- }
- 
- 
- .feature-card:hover {
+}
+
+.feature-card:hover {
   transform: perspective(1000px) rotateY(15deg);
   box-shadow: 0 20px 50px rgba(0, 123, 255, 0.3);
- }
- 
- 
- .feature-icon {
+}
+
+.feature-icon {
   font-size: 4rem;
   margin-bottom: 1rem;
   background: linear-gradient(135deg, #007bff, #ffb400, #ff7eb3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
- }
- 
- 
- .feature-card h3 {
+}
+
+.feature-card h3 {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
- }
- 
- 
- .feature-card p {
+}
+
+.feature-card p {
   font-size: 1rem;
   color: #777;
   line-height: 1.6;
- }
- 
- 
- /* Individual Feature Page */
- .feature-detail-page {
+}
+
+/* Individual Feature Page */
+.feature-detail-page {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #eef2ff, #fdf6ff, #f7fbff);
   color: #333;
@@ -126,56 +114,49 @@
   padding: 5rem 2rem;
   position: relative;
   overflow: hidden;
- }
- 
- 
- .feature-detail-content {
+}
+
+.feature-detail-content {
   position: relative;
   z-index: 2;
- }
- 
- 
- .feature-detail-page h1 {
+}
+
+.feature-detail-page h1 {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
   background: linear-gradient(90deg, #007bff, #ff7eb3, #ffb400);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
- }
- 
- 
- .feature-detail-text {
+}
+
+.feature-detail-text {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   color: #555;
   line-height: 1.6;
- }
- 
- 
- .feature-interactive {
+}
+
+.feature-interactive {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(245, 245, 245, 0.9));
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   padding: 2rem;
   border-radius: 20px;
   margin: 2rem 0;
- }
- 
- 
- .feature-interactive h2 {
+}
+
+.feature-interactive h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #333;
- }
- 
- 
- .feature-interactive p {
+}
+
+.feature-interactive p {
   font-size: 1rem;
   color: #777;
- }
- 
- 
- .back-btn {
+}
+
+.back-btn {
   background: linear-gradient(135deg, #007bff, #ff7eb3);
   color: #fff;
   padding: 0.8rem 2rem;
@@ -183,17 +164,15 @@
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.3s, background 0.3s;
- }
- 
- 
- .back-btn:hover {
+}
+
+.back-btn:hover {
   transform: scale(1.1);
   background: linear-gradient(135deg, #ff7eb3, #007bff);
- }
- 
- 
- /* Animations */
- @keyframes slideIn {
+}
+
+/* Animations */
+@keyframes slideIn {
   0% {
     transform: translateY(-50px);
     opacity: 0;
@@ -202,17 +181,13 @@
     transform: translateY(0);
     opacity: 1;
   }
- }
- 
- 
- @keyframes flow {
+}
+
+@keyframes flow {
   from {
     transform: translate(-50%, -50%);
   }
   to {
     transform: translate(0, 0);
   }
- }
- 
- 
- 
+}

@@ -8,7 +8,7 @@ import RoadmapSection from "./RoadmapSection";
 import DesignPhaseSection from "./DesignPhaseSection";
 import PricingPage from "./PricingPage";
 import FoundersPage from "./FoundersPage";
-import FeaturesPage from "./FeaturesPage"; // Updated import for default export
+import { FeaturesPage } from "./FeaturesPage";
 
 function App() {
   return (
