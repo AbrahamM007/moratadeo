@@ -11,7 +11,7 @@ const pricingPlans = [
   },
   {
     title: "Pro",
-    price: "$799",
+    price: "$99",
     features: ["5 Projects", "Priority Support", "50 GB Storage"],
     buttonText: "Most Popular",
     popular: true,
