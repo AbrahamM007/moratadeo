@@ -1,0 +1,106 @@
+/* Section Container */
+.testimonials-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    position: relative;
+    background: linear-gradient(135deg, #1a1a1a 0%, #000 100%); /* Base dark gradient */
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .testimonials-section::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(0, 112, 255, 0.2) 0%, transparent 60%);
+    z-index: 0;
+    filter: blur(80px);
+  }
+  
+  .testimonials-section::after {
+    content: "";
+    position: absolute;
+    bottom: -10%;
+    right: -15%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 112, 255, 0.3) 0%, transparent 70%);
+    z-index: 0;
+    filter: blur(120px);
+  }
+  
+  .content-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 80%;
+    margin: auto;
+  }
+  
+  .testimonials-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #fff;
+  }
+  
+  /* Carousel */
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .carousel-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 15s linear infinite; /* Auto-scroll effect */
+  }
+  
+  .carousel-item {
+    flex: 0 0 auto;
+    width: 120px; /* Adjust logo size */
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1); /* Light transparent box background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .carousel-item img {
+    width: 80%; /* Adjust logo size */
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Scroll Animation */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .testimonials-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .carousel-item {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  

@@ -1,0 +1,195 @@
+/* Pricing Page */
+.pricing-page {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5faff, #eef2f3);
+    color: #333;
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Header Section */
+  .pricing-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  
+  .pricing-header h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #007bff, #ff7eb3, #ffb400);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 3s infinite alternate;
+  }
+  
+  .pricing-header p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /* Pricing Grid */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Pricing Card */
+  .pricing-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: 2px solid transparent;
+  }
+  
+  /* Price Adjustment for Pro Card */
+.pricing-card.popular .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #ffffff; /* Set the price color to white */
+  }
+  
+  
+  .pricing-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 50px rgba(0, 123, 255, 0.4);
+    border: 2px solid rgba(0, 123, 255, 0.2);
+  }
+  
+  /* Badge
+  .badge {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: linear-gradient(135deg, #ff7eb3, #007bff);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    transform: rotate(15deg);
+    box-shadow: 0 4px 10px rgba(255, 126, 179, 0.3);
+  }
+   */
+  /* Pricing Title */
+  .pricing-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Pricing Amount */
+  .pricing-card .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    background: linear-gradient(90deg, #007bff, #ffb400);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Features */
+  .features {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+  }
+  
+  .features li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  /* Buttons */
+  .pricing-button {
+    background: linear-gradient(135deg, #007bff, #ff7eb3);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+    text-decoration: none;
+  }
+  
+  .pricing-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4);
+  }
+  
+  /* Background Circles */
+  .floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 8s infinite ease-in-out;
+  }
+  
+  .circle-blue {
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 123, 255, 0.15);
+    top: 10%;
+    left: 10%;
+  }
+  
+  .circle-pink {
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 126, 179, 0.15);
+    bottom: 15%;
+    right: 15%;
+  }
+  
+  .circle-orange {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 180, 0, 0.15);
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Animations */
+  @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  

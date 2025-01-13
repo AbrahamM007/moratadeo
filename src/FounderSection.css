@@ -1,0 +1,84 @@
+/* Section Container */
+.founder-section {
+    position: relative;
+    height: 60vh; /* Adjust the height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin-right: 30px; /* Margin only on the right side */
+    border-radius: 0 50px 50px 0; /* Border radius on the right */
+  }
+  
+  /* Video Wrapper */
+  .video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 30px); /* Adjust width to account for right margin */
+    height: 100%;
+  }
+  
+  /* Video Background */
+  .video-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the container */
+  }
+  
+  /* Black Opacity Layer */
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 1;
+  }
+  
+  /* Content Overlay */
+  .founder-section .content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    max-width: 800px;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .founder-section .content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  .founder-section .content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .founder-section {
+      height: 50vh;
+      margin-right: 15px; /* Reduce margin for smaller screens */
+      border-radius: 0 30px 30px 0; /* Adjust radius for smaller screens */
+    }
+  
+    .video-wrapper {
+      width: calc(100% - 15px); /* Adjust width for smaller screens */
+    }
+  
+    .founder-section .content h1 {
+      font-size: 2rem;
+    }
+  
+    .founder-section .content p {
+      font-size: 1rem;
+    }
+  }
+  

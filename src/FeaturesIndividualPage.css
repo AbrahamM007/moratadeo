@@ -1,0 +1,461 @@
+/* Base styling for feature page with multi-layered animated background */
+.feature-page {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    color: #fff;
+    background: radial-gradient(circle at top left, #ff7eb3, #007bff, #00d4ff);
+  }
+  
+  /* Multi-layered drifting blobs */
+  .feature-page::before, 
+  .feature-page::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.3;
+    animation: drift 25s ease-in-out infinite;
+    z-index: 0;
+  }
+  .feature-page::before {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,126,179,0.7), transparent);
+    top: -150px;
+    left: -150px;
+  }
+  .feature-page::after {
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(0,212,255,0.7), transparent);
+    bottom: -200px;
+    right: -200px;
+  }
+  
+  /* Particle Background Overlay with shimmer */
+  .particle-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 50%, transparent 20%, rgba(255,255,255,0.1) 80%);
+    animation: particleMove 25s linear infinite, shimmer 5s ease-in-out infinite;
+    z-index: 1;
+  }
+  
+  /* Hero Section with glitch and neon text effects */
+  .feature-hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(0,0,0,0.2), transparent);
+  }
+  .feature-title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 4;
+    animation: glow 2s ease-in-out infinite alternate, glitch 1.5s infinite;
+    text-shadow: 
+      0 0 10px #fff, 
+      0 0 20px #ff7eb3, 
+      0 0 30px #ff007e,
+      0 0 40px #ff007e,
+      0 0 50px #ff007e;
+  }
+  @keyframes glitch {
+    0% {
+      text-shadow: 2px 0 #ff007e;
+      transform: translate(0);
+    }
+    20% {
+      text-shadow: -2px 0 #00d4ff;
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      text-shadow: 2px 0 #ff007e;
+      transform: translate(2px, -2px);
+    }
+    60% {
+      text-shadow: -2px 0 #00d4ff;
+      transform: translate(-2px, 2px);
+    }
+    80% {
+      text-shadow: 2px 0 #ff007e;
+      transform: translate(2px, -2px);
+    }
+    100% {
+      text-shadow: 0 0 #fff;
+      transform: translate(0);
+    }
+  }
+  .feature-subtitle {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    opacity: 0.9;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+    position: relative;
+    z-index: 4;
+    animation: fadeIn 3s ease-out;
+  }
+  .scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    animation: bounce 2s infinite, flicker 3s infinite;
+    z-index: 4;
+  }
+  /* Flicker animation for scroll indicator */
+  @keyframes flicker {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.2; }
+  }
+  
+  /* Abstract shapes behind hero content for depth */
+  .abstract-shape {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    filter: blur(120px);
+    animation: rotateShape 20s linear infinite;
+    z-index: 2;
+  }
+  
+  /* Additional neon orbs in the hero section */
+  .neon-orb {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3), transparent);
+    filter: blur(20px);
+    animation: orbPulse 5s infinite alternate;
+    z-index: 2;
+  }
+  .orb-top-left {
+    top: 10%;
+    left: 10%;
+  }
+  .orb-bottom-right {
+    bottom: 10%;
+    right: 10%;
+  }
+  @keyframes orbPulse {
+    from { transform: scale(0.8); opacity: 0.7; }
+    to { transform: scale(1.2); opacity: 1; }
+  }
+  
+  /* Interactive Section with neon borders and glowing edges */
+  .interactive-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    color: #fff;
+    text-align: center;
+    padding: 5rem 2rem;
+    position: relative;
+    z-index: 3;
+    border-top: 2px solid rgba(255,255,255,0.2);
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+  }
+  .interactive-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    animation: fadeIn 2s ease-out;
+  }
+  .interactive-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Styled container for the interactive video block */
+.interactive-box {
+    position: relative;
+    width: 80%;
+    max-width: 900px;        /* Adjust maximum width as desired */
+    margin: 2rem auto;       /* Centered and spaced from surrounding content */
+    padding: 0;              /* Remove internal padding for a clean look */
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent dark background */
+    border-radius: 20px;     /* Rounded corners for a softer look */
+    overflow: hidden;        /* Ensures rounded corners clip video content */
+    box-shadow: 0 15px 40px rgba(0, 123, 255, 0.6); /* Glowing, neon-style shadow */
+    transition: transform 0.5s, box-shadow 0.5s;
+  }
+  
+  /* Hover effect for the interactive box */
+  .interactive-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 60px rgba(0, 123, 255, 0.9), 0 0 30px rgba(255,255,255,0.4);
+  }
+  
+  /* Responsive video container to maintain aspect ratio */
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;  /* 16:9 aspect ratio */
+  }
+  
+  /* Make the YouTube iframe fill the video container */
+  .video-container iframe.youtube-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  
+  .interactive-placeholder {
+    font-size: 5rem;
+    color: #00d4ff;
+    transition: transform 0.5s;
+  }
+  .detail-icon:hover {
+    animation: iconPulse 1.5s infinite alternate;
+  }
+  
+  /* Content Section with sleek glassmorphic effect */
+  .feature-content {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    border-radius: 20px;
+    margin: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+  }
+  .feature-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    animation: fadeInUp 2s ease-out;
+  }
+  .feature-content p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Back Button with vibrant neon border and glow */
+  .back-btn {
+    background: linear-gradient(135deg, #007bff, #ff7eb3);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin: 2rem auto;
+    display: block;
+    width: fit-content;
+    transition: transform 0.3s, box-shadow 0.3s, background 2s linear;
+    z-index: 4;
+    position: relative;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    border: 2px solid rgba(255,255,255,0.3);
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+  }
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .back-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255,255,255,0.8);
+  }
+  .back-btn:active {
+    transform: scale(0.95);
+  }
+  
+  /* Floating Icons with enhanced floating and pulsating effects */
+  .floating-icon {
+    position: absolute;
+    font-size: 5rem;
+    opacity: 0.15;
+    animation: float 6s infinite ease-in-out, pulse 3s infinite alternate;
+    z-index: 2;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 0.15; }
+    50% { transform: scale(1.2); opacity: 0.3; }
+    100% { transform: scale(1); opacity: 0.15; }
+  }
+  
+  /* Additional Animations & Effects */
+  @keyframes glow {
+    from {
+      text-shadow: 
+        0 0 10px #fff, 
+        0 0 20px #ff7eb3, 
+        0 0 30px #ff007e,
+        0 0 40px #ff007e,
+        0 0 50px #ff007e;
+    }
+    to {
+      text-shadow: 
+        0 0 20px #fff, 
+        0 0 30px #00d4ff, 
+        0 0 40px #00d4ff,
+        0 0 50px #00ff9d,
+        0 0 60px #00ff9d;
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(15px); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes particleMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+  }
+  
+  @keyframes rotateShape {
+    from { transform: translate(-50%, -50%) rotate(45deg); }
+    to { transform: translate(-50%, -50%) rotate(405deg); }
+  }
+  
+  @keyframes iconPulse {
+    from { transform: scale(1) rotate(0deg); }
+    to { transform: scale(1.1) rotate(360deg); }
+  }
+  
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(50px, -50px); }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes shimmer {
+    0% {
+      filter: brightness(1);
+    }
+    50% {
+      filter: brightness(1.3);
+    }
+    100% {
+      filter: brightness(1);
+    }
+  }
+  
+  /* Starfield background for extra depth on entire page */
+  .feature-page::before {
+    content: "";
+    position: absolute;
+    width: 200vw;
+    height: 200vh;
+    top: -50vh;
+    left: -50vw;
+    background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="3" height="3"><circle cx="1.5" cy="1.5" r="1.5" fill="white"/></svg>') repeat;
+    animation: starfield 50s linear infinite;
+    opacity: 0.2;
+    z-index: 0;
+  }
+  @keyframes starfield {
+    from { transform: translateY(0); }
+    to { transform: translateY(100vh); }
+  }
+  
+  /* Responsive styles for mobile and tablet */
+  @media (max-width: 768px) {
+    .feature-title {
+      font-size: 2.5rem;
+    }
+    .feature-subtitle {
+      font-size: 1.2rem;
+    }
+    .scroll-indicator {
+      font-size: 1rem;
+    }
+    .interactive-section h2 {
+      font-size: 2rem;
+    }
+    .interactive-section p {
+      font-size: 1rem;
+    }
+    .interactive-box {
+      /* For smaller screens, you can adjust height if needed */
+      height: auto;
+    }
+    .interactive-placeholder {
+      font-size: 3rem;
+    }
+    .feature-content h2 {
+      font-size: 2rem;
+    }
+    .feature-content p {
+      font-size: 1rem;
+    }
+    .back-btn {
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+    }
+    .floating-icon {
+      font-size: 4rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .feature-title {
+      font-size: 2rem;
+    }
+    .feature-subtitle {
+      font-size: 1rem;
+    }
+    .interactive-section h2 {
+      font-size: 1.5rem;
+    }
+    .interactive-placeholder {
+      font-size: 2.5rem;
+    }
+    .feature-content h2 {
+      font-size: 1.75rem;
+    }
+    .feature-content p {
+      font-size: 0.9rem;
+      padding: 0 1rem;
+    }
+    .back-btn {
+      font-size: 0.9rem;
+      padding: 0.7rem 1.2rem;
+    }
+  }
+  

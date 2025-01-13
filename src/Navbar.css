@@ -1,0 +1,223 @@
+/* Navbar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #ffffff, #f5f5f5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures navbar stays on top */
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+  }
+  
+  /* Navbar on Scroll */
+  .navbar.scrolled {
+    background: #ffffff; /* Plain white background on scroll */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid #ddd; /* Subtle border for scroll effect */
+    transform: scale(1.01);
+  }
+  
+  /* Logo Link */
+  .navbar-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Removes underline */
+    cursor: pointer;
+  }
+  
+  /* Logo Container */
+  .navbar-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  /* Logo Icon */
+  .navbar-logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff6491, #ffb400);
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(255, 100, 145, 0.5);
+    transition: transform 0.3s ease;
+  }
+  
+  .navbar-logo-icon:hover {
+    transform: rotate(360deg) scale(1.1);
+  }
+  
+  /* Logo Text */
+  .navbar-logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    background: linear-gradient(90deg, #ff6491, #007bff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Logo Hover Effect */
+  .navbar-logo-link:hover .navbar-logo-container {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Navbar Menu */
+  .navbar-menu {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  /* Menu Links */
+  .navbar-menu a {
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none; /* Removes underline */
+    color: #555;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-menu a:hover {
+    color: #ff6491;
+  }
+  
+  .navbar-menu a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6491, #ffb400);
+    transition: width 0.3s ease;
+  }
+  
+  .navbar-menu a:hover::after {
+    width: 100%;
+  }
+  
+  /* Highlight Link */
+  .navbar-highlight {
+    font-weight: bold;
+    padding: 0.8rem 1.5rem;
+    color: #fff;
+    background: linear-gradient(135deg, #ff6491, #ffb400);
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(255, 100, 145, 0.4);
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  .navbar-highlight:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #ffb400, #ff6491);
+  }
+  
+  /* Hamburger Menu */
+  .navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 11;
+  }
+  
+  .hamburger {
+    width: 1.5rem;
+    height: 2px;
+    background: #333;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .hamburger::before,
+  .hamburger::after {
+    content: "";
+    width: 1.5rem;
+    height: 2px;
+    background: #333;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .hamburger::before {
+    top: -6px;
+  }
+  
+  .hamburger::after {
+    top: 6px;
+  }
+  
+  .hamburger.open {
+    background: transparent;
+  }
+  
+  .hamburger.open::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  
+  .hamburger.open::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+  .navbar-logo-image {
+    height: 2.3rem; /* Adjust size to match your design */
+    width: 2.3rem;
+    /* border-radius: 50%; Optional: Make it circular */
+    object-fit: cover; /* Ensures the image scales correctly */
+  
+    transition: transform 0.3s ease;
+  }
+  
+  .navbar-logo-image:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+  }
+  
+  
+  /* Responsive Menu */
+  @media (max-width: 768px) {
+    .navbar-menu {
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: linear-gradient(135deg, #ffffff, #f5f5f5);
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transform: translateY(-200%);
+      opacity: 0;
+      visibility: hidden;
+      transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    }
+  
+    .navbar-menu.open {
+      transform: translateY(0%);
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    .navbar-menu a {
+      padding: 1rem;
+      text-align: center;
+    }
+  
+    .navbar-toggle {
+      display: block;
+    }
+  }
+  
