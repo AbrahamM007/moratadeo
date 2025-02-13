@@ -4,7 +4,7 @@ import "./PricingPage.css";
 const pricingPlans = [
   {
     title: "Basic",
-    price: "$399",
+    price: "$499",
     features: ["1 Project", "Basic Support", "5 GB Storage"],
     buttonText: "Get Started",
     popular: false,
