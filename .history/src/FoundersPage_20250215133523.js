@@ -1,31 +1,30 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
 // Import local images
-import Founder1 from "./abraham.png"; // Ensure correct path
-import Founder2 from "./sabina.png"; // Ensure correct path
-import "./FoundersPage.css"; // Ensure CSS file is present
+import Founder1 from "./abraham.png"; // Update path to your images
+import Founder2 from "./sa"; // Update path to your images
 
 const FoundersPage = () => {
   const founders = [
     {
-      name: "Abraham Mora-Tadeo",
+      name: "Alex Chen",
       role: "CEO & Visionary",
       image: Founder1,
     },
     {
-      name: "Sabina Cervantes",
+      name: "Samantha Wu",
       role: "CTO & Innovator",
       image: Founder2,
     },
   ];
 
-  const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
-  }, []);
+  const particlesInit = async (main) => {
+    await loadFull(main);
+  };
 
   const particlesConfig = {
     particles: {
@@ -69,7 +68,10 @@ const FoundersPage = () => {
     <div className="founders-container">
       {/* Metallic Particles */}
       <div className="metallic-dust">
-        <Particles init={particlesInit} options={particlesConfig} />
+        <Particles
+          init={particlesInit}
+          options={particlesConfig}
+        />
       </div>
 
       {/* Floating Shapes */}
@@ -147,9 +149,6 @@ const FoundersPage = () => {
                 {[FaLinkedin, FaTwitter, FaGithub].map((Icon, i) => (
                   <motion.a 
                     key={i}
-                    href="#" // Placeholder, update with real links
-                    target="_blank"
-                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.2, y: -5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >

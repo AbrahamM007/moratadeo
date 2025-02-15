@@ -1,98 +1,52 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-
-// Import local images
-import Founder1 from "./abraham.png"; // Ensure correct path
-import Founder2 from "./sabina.png"; // Ensure correct path
-import "./FoundersPage.css"; // Ensure CSS file is present
+import "./FoundersPage.css";
 
 const FoundersPage = () => {
   const founders = [
     {
       name: "Abraham Mora-Tadeo",
       role: "CEO & Visionary",
-      image: Founder1,
+      image: "abraham.jpg,
     },
     {
       name: "Sabina Cervantes",
       role: "CTO & Innovator",
-      image: Founder2,
+      image: "url('https://source.unsplash.com/random/800x800/?entrepreneur,woman')",
     },
   ];
 
-  const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
-  }, []);
-
-  const particlesConfig = {
-    particles: {
-      number: { value: 40 },
-      color: { 
-        value: ["#ffffff", "#e5e7eb", "#94a3b8"],
-        animation: {
-          enable: true,
-          speed: 20,
-          sync: false
-        }
-      },
-      opacity: { value: { min: 0.1, max: 0.3 } },
-      size: { value: { min: 0.5, max: 1.5 } },
-      move: {
-        enable: true,
-        speed: { min: 0.5, max: 1 },
-        direction: "none",
-        outModes: "bounce",
-        trail: {
-          enable: true,
-          length: 4,
-          fillColor: "#ffffff"
-        }
-      },
-      shape: {
-        type: ["circle", "triangle", "polygon"],
-        options: {
-          polygon: { sides: 5 }
-        }
-      },
-      wobble: {
-        enable: true,
-        distance: 3,
-        speed: 0.5
-      }
-    }
+  const particlesInit = async (main) => {
+    await loadFull(main);
   };
 
   return (
     <div className="founders-container">
-      {/* Metallic Particles */}
-      <div className="metallic-dust">
-        <Particles init={particlesInit} options={particlesConfig} />
-      </div>
-
-      {/* Floating Shapes */}
-      <div className="floating-shapes">
-        <div className="shape-1"></div>
-        <div className="shape-2"></div>
-        <div className="shape-3"></div>
-      </div>
-
-      {/* Sparkles */}
-      {[...Array(8)].map((_, i) => (
-        <div 
-          key={i}
-          className="sparkle"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            width: `${Math.random() * 20 + 10}px`,
-            height: `${Math.random() * 20 + 10}px`,
-            animationDelay: `${i * 0.2}s`
-          }}
-        />
-      ))}
+      {/* Floating Particles Background */}
+      <Particles
+        init={particlesInit}
+        options={{
+          particles: {
+            number: { value: 30 },
+            color: { value: ["#4ADE80", "#3B82F6", "#F59E0B"] },
+            opacity: { value: 0.5 },
+            size: { value: 1 },
+            move: {
+              enable: true,
+              speed: 1,
+              direction: "none",
+              random: true,
+              straight: false,
+              out_mode: "out",
+              bounce: false,
+            },
+          },
+        }}
+        className="particles"
+      />
 
       {/* Header Section */}
       <motion.div 
@@ -133,12 +87,10 @@ const FoundersPage = () => {
             whileHover={{ scale: 1.05, rotate: index % 2 === 0 ? -1 : 1 }}
             className="founder-card"
           >
-            <div className="founder-image-container">
-              <img 
-                src={founder.image} 
-                alt={founder.name}
-                className="founder-image"
-              />
+            <div 
+              className="founder-image"
+              style={{ backgroundImage: founder.image }}
+            >
               <motion.div 
                 className="social-overlay"
                 initial={{ y: 100 }}
@@ -147,9 +99,6 @@ const FoundersPage = () => {
                 {[FaLinkedin, FaTwitter, FaGithub].map((Icon, i) => (
                   <motion.a 
                     key={i}
-                    href="#" // Placeholder, update with real links
-                    target="_blank"
-                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.2, y: -5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >

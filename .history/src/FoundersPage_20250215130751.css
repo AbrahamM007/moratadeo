@@ -1,0 +1,88 @@
+/* Page Layout */
+.founders-container {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+}
+
+/* Gradient Text */
+.gradient-text {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #10b981, #3b82f6, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Subtitle */
+.founders-description {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* Founders Card List */
+.founders-list {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+  gap: 20px;
+  scrollbar-width: none;
+}
+
+.founder-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.founder-image {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.founder-info {
+  padding: 10px;
+}
+
+.founder-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.founder-title {
+  font-size: 1rem;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.founder-desc {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* View More Button */
+.view-more-button {
+  margin-top: 30px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 24px;
+  background: linear-gradient(to right, #f59e0b, #3b82f6);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-more-button:hover {
+  opacity: 0.9;
+}

@@ -23,18 +23,10 @@ const Footer = () => {
 
         {/* Social Media Section */}
         <div className="footer-social">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <i className="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <i className="fab fa-instagram"></i>
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-            <i className="fab fa-twitter"></i>
-          </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-            <i className="fab fa-youtube"></i>
-          </a>
+          <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i className="fab fa-youtube"></i></a>
         </div>
       </div>
 
@@ -42,8 +34,8 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>&copy; 2025 Mora Tadeo. All rights reserved.</p>
         <div className="policies">
-          <a href="/privacy-policy">Privacy Policy</a>
-          <a href="/terms-and-conditions">Terms & Conditions</a>
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms & Conditions</a>
         </div>
       </div>
     </footer>

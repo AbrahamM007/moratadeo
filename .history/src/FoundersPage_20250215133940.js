@@ -5,19 +5,19 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
 // Import local images
-import Founder1 from "./abraham.png"; // Ensure correct path
-import Founder2 from "./sabina.png"; // Ensure correct path
+import Founder1 from "./assets/abraham.png"; // Ensure correct path
+import Founder2 from "./assets/IMG_1554.JPG"; // Ensure correct path
 import "./FoundersPage.css"; // Ensure CSS file is present
 
 const FoundersPage = () => {
   const founders = [
     {
-      name: "Abraham Mora-Tadeo",
+      name: "Alex Chen",
       role: "CEO & Visionary",
       image: Founder1,
     },
     {
-      name: "Sabina Cervantes",
+      name: "Samantha Wu",
       role: "CTO & Innovator",
       image: Founder2,
     },

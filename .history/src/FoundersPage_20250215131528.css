@@ -1,0 +1,215 @@
+.founders-container {
+  background: white;
+  min-height: 100vh;
+  padding: 40px;
+  text-align: center;
+}
+
+.header-section {
+  margin-bottom: 40px;
+}
+
+.gradient-text {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #10b981, #3b82f6, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #6b7280;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.founder-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.founder-card:hover {
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.founder-image {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.founder-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.founder-role {
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.linkedin-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #0a66c2;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.linkedin-link:hover {
+  background: #084a99;
+}
+/* Full-page background with subtle animated glow */
+.founders-container {
+  position: relative;
+  background: linear-gradient(135deg, #083b66, #0C6C00, #f59e0b);
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Animated glowing background */
+.background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 10%, transparent 80%);
+  animation: glowing 6s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes glowing {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(1.1); opacity: 0.5; }
+}
+
+/* Animated text */
+.gradient-text {
+  font-size: 3.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #10b981, #3b82f6, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.subtitle {
+  color: white;
+  max-width: 600px;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* Grid for founders */
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Founder card with 3D hover effect */
+.founder-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.founder-card:hover {
+  transform: rotateY(10deg) scale(1.05);
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Founder Image */
+.founder-image {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  border: 2px solid white;
+  transition: transform 0.3s ease;
+}
+
+.founder-card:hover .founder-image {
+  transform: scale(1.1);
+}
+
+/* Founder Name & Role */
+.founder-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.founder-role {
+  color: #d1d5db;
+  font-size: 1.1rem;
+}
+
+/* Hover bio reveal */
+.founder-bio {
+  opacity: 0;
+  color: white;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+  margin-top: 10px;
+}
+
+.founder-card:hover .founder-bio {
+  opacity: 1;
+}
+
+/* LinkedIn Button */
+.linkedin-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #0077b5, #00aaff);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.linkedin-link:hover {
+  background: #005f8c;
+  transform: scale(1.1);
+}

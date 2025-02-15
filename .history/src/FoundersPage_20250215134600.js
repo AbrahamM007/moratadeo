@@ -6,7 +6,7 @@ import { loadFull } from "tsparticles";
 
 // Import local images
 import Founder1 from "./abraham.png"; // Ensure correct path
-import Founder2 from "./sabina.png"; // Ensure correct path
+import Founder2 from "./IMG_1554.JPG"; // Ensure correct path
 import "./FoundersPage.css"; // Ensure CSS file is present
 
 const FoundersPage = () => {

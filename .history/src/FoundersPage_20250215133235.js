@@ -1,31 +1,29 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-
-// Import local images
-import Founder1 from "./abraham.png"; // Ensure correct path
-import Founder2 from "./sabina.png"; // Ensure correct path
-import "./FoundersPage.css"; // Ensure CSS file is present
+import "./FoundersPage.css";
 
 const FoundersPage = () => {
   const founders = [
     {
-      name: "Abraham Mora-Tadeo",
+      name: "Alex Chen",
       role: "CEO & Visionary",
-      image: Founder1,
+      bio: "Alex is a visionary leader with a passion for sustainable agriculture.",
+      image: "url('https://source.unsplash.com/random/800x800/?entrepreneur,man')",
     },
     {
-      name: "Sabina Cervantes",
+      name: "Samantha Wu",
       role: "CTO & Innovator",
-      image: Founder2,
+      bio:
+      image: "url('https://source.unsplash.com/random/800x800/?entrepreneur,woman')",
     },
   ];
 
-  const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
-  }, []);
+  const particlesInit = async (main) => {
+    await loadFull(main);
+  };
 
   const particlesConfig = {
     particles: {
@@ -69,7 +67,10 @@ const FoundersPage = () => {
     <div className="founders-container">
       {/* Metallic Particles */}
       <div className="metallic-dust">
-        <Particles init={particlesInit} options={particlesConfig} />
+        <Particles
+          init={particlesInit}
+          options={particlesConfig}
+        />
       </div>
 
       {/* Floating Shapes */}
@@ -133,12 +134,10 @@ const FoundersPage = () => {
             whileHover={{ scale: 1.05, rotate: index % 2 === 0 ? -1 : 1 }}
             className="founder-card"
           >
-            <div className="founder-image-container">
-              <img 
-                src={founder.image} 
-                alt={founder.name}
-                className="founder-image"
-              />
+            <div 
+              className="founder-image"
+              style={{ backgroundImage: founder.image }}
+            >
               <motion.div 
                 className="social-overlay"
                 initial={{ y: 100 }}
@@ -147,9 +146,6 @@ const FoundersPage = () => {
                 {[FaLinkedin, FaTwitter, FaGithub].map((Icon, i) => (
                   <motion.a 
                     key={i}
-                    href="#" // Placeholder, update with real links
-                    target="_blank"
-                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.2, y: -5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
