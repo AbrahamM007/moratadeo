@@ -1,0 +1,163 @@
+:root {
+  --white: rgba(255, 255, 255, 0.95);
+  --black: #0f172a;
+}
+
+.phase-container {
+  height: 100vh;
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating Particles Animation */
+.particle-field {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: float 15s infinite linear;
+  filter: blur(1px);
+  opacity: 0.7;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh) translateX(-10vw); }
+  100% { transform: translateY(-20vh) translateX(10vw); }
+}
+
+/* Dynamic Lines Background */
+.dynamic-lines {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: 
+    linear-gradient(90deg, transparent 49%, var(--black) 50%),
+    linear-gradient(180deg, transparent 49%, var(--black) 50%);
+  background-size: 30px 30px;
+  opacity: 0.05;
+  animation: moveLines 20s linear infinite;
+}
+
+@keyframes moveLines {
+  from { transform: translate(-15%, -15%); }
+  to { transform: translate(0%, 0%); }
+}
+
+/* Glass Morphism Card */
+.glass-card {
+  position: relative;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 600px;
+  transform-style: preserve-3d;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 2rem;
+  background: linear-gradient(45deg, 
+    rgba(255,255,255,0.3) 0%, 
+    rgba(255,255,255,0.1) 100%);
+  z-index: -1;
+}
+
+.phase-icon {
+  font-size: 4rem;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  margin: 0 auto 2rem;
+  color: white;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.glass-card h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, var(--black), #334155);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card p {
+  font-size: 1.25rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Abstract Progress Navigation */
+.phase-progress {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.5rem;
+}
+
+.progress-line {
+  width: 60px;
+  height: 4px;
+  background: rgba(15, 23, 42, 0.1);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.progress-line::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: var(--gradient);
+  transition: width 0.5s ease;
+}
+
+.progress-line.active {
+  width: 100px;
+}
+
+.progress-line.active::before {
+  width: 100%;
+  background: linear-gradient(90deg, 
+    var(--gradient) 0%, 
+    rgba(255,255,255,0.8) 100%);
+}
+
+.progress-line:hover {
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .glass-card {
+    padding: 2rem;
+    margin: 1rem;
+  }
+  
+  .phase-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 3rem;
+  }
+  
+  .glass-card h3 {
+    font-size: 2rem;
+  }
+}

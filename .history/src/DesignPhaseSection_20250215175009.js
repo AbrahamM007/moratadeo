@@ -43,8 +43,7 @@ const DesignPhaseSection = () => {
   return (
     <div className="single-phase-container">
       <section className={`phase-section phase-${currentPhaseIndex}`}>
-        <div className="phase-overlay"></div>
-        <div key={currentPhaseIndex} className="phase-content">
+        <div className="phase-content">
           <div className="icon" style={{ background: currentPhase.gradient }}>
             {currentPhase.icon}
           </div>

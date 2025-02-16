@@ -1,0 +1,160 @@
+/* RoadmapSection.css */
+.roadmap-section {
+  padding: 8rem 2rem;
+  background: radial-gradient(circle at center, #0a0c27, #000);
+  position: relative;
+  overflow: hidden;
+}
+
+.holographic-heading {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 8rem;
+  position: relative;
+  color: transparent;
+  background: linear-gradient(45deg, #00f3ff, #ff00ff, #ffd700);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(0, 243, 255, 0.5);
+}
+
+.glitch-text {
+  animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 0.05em 0 0 rgba(255,0,0,.75),
+                   -0.05em -0.025em 0 rgba(0,255,0,.75),
+                   -0.025em 0.05em 0 rgba(0,0,255,.75); }
+  14% { text-shadow: 0.05em 0 0 rgba(255,0,0,.75),
+                   -0.05em -0.025em 0 rgba(0,255,0,.75),
+                   -0.025em 0.05em 0 rgba(0,0,255,.75); }
+  15% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,.75),
+                   0.025em 0.025em 0 rgba(0,255,0,.75),
+                   -0.05em -0.05em 0 rgba(0,0,255,.75); }
+  49% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,.75),
+                   0.025em 0.025em 0 rgba(0,255,0,.75),
+                   -0.05em -0.05em 0 rgba(0,0,255,.75); }
+  50% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,.75),
+                   0.05em 0 0 rgba(0,255,0,.75),
+                   0 -0.05em 0 rgba(0,0,255,.75); }
+  99% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,.75),
+                   0.05em 0 0 rgba(0,255,0,.75),
+                   0 -0.05em 0 rgba(0,0,255,.75); }
+  100% { text-shadow: -0.025em 0 0 rgba(255,0,0,.75),
+                   -0.025em -0.025em 0 rgba(0,255,0,.75),
+                   -0.025em -0.05em 0 rgba(0,0,255,.75); }
+}
+
+.roadmap-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.timeline {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.roadmap-step {
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  height: 20vh;
+  opacity: 0;
+}
+
+.roadmap-step:nth-child(odd) .holographic-card {
+  margin-left: auto;
+  margin-right: 5%;
+}
+
+.roadmap-step:nth-child(even) .holographic-card {
+  margin-left: 5%;
+}
+
+.step-orb {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 30% 30%, #00f3ff, #0066ff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.holographic-card {
+  width: 45%;
+  min-height: 200px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(0, 243, 255, 0.1);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.holographic-card:hover {
+  transform: translateY(-10px) rotateZ(1deg);
+  box-shadow: 0 0 60px rgba(0, 243, 255, 0.3);
+}
+
+.holographic-card h3 {
+  color: #00f3ff;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+}
+
+.holographic-card p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.energy-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  animation: pulse 3s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 243, 255, 0.4); }
+  70% { box-shadow: 0 0 0 20px rgba(0, 243, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 243, 255, 0); }
+}
+
+@media (max-width: 768px) {
+  .holographic-card {
+    width: 80%;
+    margin: 0 auto !important;
+  }
+  
+  .roadmap-step {
+    height: 25vh;
+  }
+}

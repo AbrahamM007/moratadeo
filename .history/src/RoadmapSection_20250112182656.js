@@ -17,11 +17,7 @@ const RoadmapSection = () => {
       </h2>
       <div className="roadmap-container">
         {steps.map((step, index) => (
-          <div 
-            className="roadmap-step" 
-            key={index}
-            style={{ '--index': index }}
-          >
+          <div className="roadmap-step" key={index}>
             <div className="step-circle">{index + 1}</div>
             <div className="step-content">
               <h3>{step.title}</h3>
